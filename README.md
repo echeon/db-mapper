@@ -115,6 +115,7 @@ You can run following commands on your computer to run demo.
   => [#<Student:0x007fb7e48cee90 @attributes={:id=>2, :name=>"Hermione Granger", :house_id=>1}>]
   ```
 
+
 ## Associatable
 
 - `::belongs_to`
