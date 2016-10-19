@@ -105,13 +105,14 @@ You can run following commands on your computer to run demo.
 - `#save`
   saves a new record using `#insert` if it doesn't exist in the database. OR, it saves with updated attributes to the database using `#update` if the record already exists in the database
 
+
 ## Searchable
 
 - `::where`
-  takes an hash as an argument and returns an array of objects that satisfy the argument's condition(s).
+  takes an hash as an argument and returns an array of object(s) that satisfy the argument's condition(s).
   ```
-  [1] pry(main) > Student.where(house_id: 4)
-  [2] pry(main) > School.where(name: "Durmstrang")
+  [12] pry(main) > Student.where(name: "Hermione Granger")
+  => [#<Student:0x007fb7e48cee90 @attributes={:id=>2, :name=>"Hermione Granger", :house_id=>1}>]
   ```
 
 ## Associatable
