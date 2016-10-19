@@ -57,7 +57,11 @@ You can run following commands on your computer to run demo.
 1. Play around! You can also run your own example by creating your own database and models. Just don't forget to add `require_relative 'lib/sql_object'` to your model file(s). Also, they all should inherit from `SQLObject`!
 
 
-## SQLObject
+## Methods
+
+The followings are all methods available in DB Mapper. These examples show how you can use each method.
+
+### SQLObject
 
 - `::new`
   initializes an instance with provided hash
@@ -118,7 +122,7 @@ You can run following commands on your computer to run demo.
   saves a new record using `#insert` if it doesn't exist in the database. OR, it saves with updated attributes to the database using `#update` if the record already exists in the database
 
 
-## Searchable
+### Searchable
 
 - `::where`
   takes an hash as an argument and returns an array of one or more objects that satisfy the all conditions
@@ -129,7 +133,7 @@ You can run following commands on your computer to run demo.
   ```
 
 
-## Associatable
+### Associatable
 
 - `::belongs_to`
   is equivalent to Rails Active Record's `belongs_to` association
