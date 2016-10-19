@@ -118,5 +118,29 @@ You can run following commands on your computer to run demo.
 ## Associatable
 
 - `::belongs_to`
+  is equivalent to Rails Active Record's `belongs_to` association
+  ```
+  [14] pry(main) > harry = Student.find(1)
+  [15] pry(main) > harry.house
+  => #<House:0x007f90fe0f0578 @attributes={:id=>1, :name=>"Gryffindor", :school_id=>1}>
+  ```
+
 - `::has_many`
+  is equivalent to Rails Active Record's `has_many` association
+  ```
+  [16] pry(main) > gryffindor = House.find(1)
+  [17] pry(main) > gryffindor.students
+  => [#<Student:0x007f90fc80ee10 @attributes={:id=>1, :name=>"Harry Potter", :house_id=>1}>,
+      #<Student:0x007f90fc80e0a0 @attributes={:id=>2, :name=>"Hermione Granger", :house_id=>1}>,
+      #<Student:0x007f90fc80dd80 @attributes={:id=>3, :name=>"Ronald Weasley", :house_id=>1}>,
+      #<Student:0x007f90fc80dbc8 @attributes={:id=>4, :name=>"Neville Longbottom", :house_id=>1}>,
+      #<Student:0x007f90fc80d998 @attributes={:id=>5, :name=>"Dean Thomas", :house_id=>1}>]
+  ```
+
 - `::has_one_through`
+  is equivalent to Rails Active Record's `has_many :through` association
+  ```
+  [18] pry(main) > draco = Student.where(name: "Draco Malfoy").first
+  [19] pry(main) > draco.school
+  => #<School:0x007f90fc39db60 @attributes={:id=>1, :name=>"Hogwarts School of Witchcraft and Wizardry"}>
+  ```
