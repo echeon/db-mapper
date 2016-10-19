@@ -20,7 +20,7 @@ You can run following commands on your computer to run demo.
   $ cat wizards.sql | sqlite3 wizards.db
   ```
 
-1. Then, following tables will be generated in `wizards.db`.
+1. Then, following tables will be generated and `wizards.db` file will be created.
   * `schools`
   * `houses`
   * `students`
@@ -56,37 +56,37 @@ You can run following commands on your computer to run demo.
 - `::new`
   initializes an instance with provided hash
   ```
-  [1] pry(main) > School.new(name: "Castelobruxo")
+  [2] pry(main) > School.new(name: "Castelobruxo")
   => #<School:0x007fdda831bc98 @attributes={:name=>"Castelobruxo"}>
   ```
 
 - `::columns`
   takes no arguments and returns an array of column names
   ```
-  [2] pry(main)> Student.columns
+  [3] pry(main)> Student.columns
   => [:id, :name, :house_id]
   ```
 
 - `::all`
   takes no arguments and returns all objects in a class
   ```
-  [3] pry(main) > House.all
+  [4] pry(main) > House.all
   => [#<House:0x007fdda82e0a80 @attributes={:id=>1, :name=>"Gryffindor", :school_id=>1}>, ...]
   ```
 
 - `::find(id)`
   takes an integer as an argument and returns an object with matching id.
   ```
-  [4] pry(main) > Student.find(1)
+  [5] pry(main) > Student.find(1)
   => #<Student:0x007fdda8ab9d88 @attributes={:id=>1, :name=>"Harry Potter", :house_id=>1}>
   ```
 
 - `#insert`
   inserts a new data to the database
   ```
-  [5] pry(main) > school = School.new(name: "Castelobruxo")
-  [6] pry(main) > school.insert
-  [7] pry(main) > School.all
+  [6] pry(main) > school = School.new(name: "Castelobruxo")
+  [7] pry(main) > school.insert
+  [8] pry(main) > School.all
   => [...,
       #<School:0x007fdda818aac8 @attributes={:id=>4, :name=>"Castelobruxo"}>]
   ```
@@ -94,11 +94,11 @@ You can run following commands on your computer to run demo.
 - `#update`
   saves updated attributes to the database
   ```
-  [8] pry(main) > school = School.find(1)
+  [9] pry(main) > school = School.find(1)
   => #<School:0x007fdda89b0ae0 @attributes={:id=>1, :name=>"Hogwarts"}>
-  [9] pry(main) > school.name = "Hogwarts School of Witchcraft and Wizardry"
-  [10] pry(main) > school.update
-  [11] pry(main) > School.find(1)
+  [10] pry(main) > school.name = "Hogwarts School of Witchcraft and Wizardry"
+  [11] pry(main) > school.update
+  [12] pry(main) > School.find(1)
   => #<School:0x007fdda89b0ae0 @attributes={:id=>1, :name=>"Hogwarts School of Witchcraft and Wizardry"}>
   ```
 
@@ -109,9 +109,9 @@ You can run following commands on your computer to run demo.
 ## Searchable
 
 - `::where`
-  takes an hash as an argument and returns an array of object(s) that satisfy the argument's condition(s).
+  takes an hash as an argument and returns an array of object(s) that satisfy the argument's condition(s)
   ```
-  [12] pry(main) > Student.where(name: "Hermione Granger")
+  [13] pry(main) > Student.where(name: "Hermione Granger")
   => [#<Student:0x007fb7e48cee90 @attributes={:id=>2, :name=>"Hermione Granger", :house_id=>1}>]
   ```
 
