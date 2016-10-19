@@ -109,7 +109,7 @@ You can run following commands on your computer to run demo.
 ## Searchable
 
 - `::where`
-  takes an hash as an argument and returns an array of object(s) that satisfy the argument's condition(s)
+  takes an hash as an argument and returns an array of one or more objects that satisfy the all conditions
   ```
   [13] pry(main) > Student.where(name: "Hermione Granger")
   => [#<Student:0x007fb7e48cee90 @attributes={:id=>2, :name=>"Hermione Granger", :house_id=>1}>]
